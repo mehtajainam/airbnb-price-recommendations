@@ -1,4 +1,4 @@
-# Airbnb-price-recommendations
+# Airbnb price recommendations
 
 ### Authors: Amy Lin, Brad Jumagulov, Jainam Mehta, Prabhat Singh, Rameez Jafri
 ### Date: 11 March 2020
@@ -7,35 +7,49 @@ GitHub repository for our final project of the 'Data Mining Principles' course a
 https://github.com/mehtajainam/airbnb-price-recommendations
 
 
+As an Airbnb host, pricing your new listing can be a tricky problem to solve. One needs to account for several factors such as the location of the listing, the amenities being offered, the property and room types, and much more, in order to competitively price their listing. If you price too high, you might drive away potentials guests to other listing, but price too low and you wouldn't be making the most potential income. 
 
-Crime on public transportation and in its surroundings is severe in Chicago, posing a threat to consumers and a challenge to law enforcement authorities. Many UChicago students frequently use public transportation and hence are affected by this issue. The objective of this project is to discover patterns in the occurrence of crime on and around public transportation. The insights derived from this analysis should be used to give consumers guidance on the risk related to the route that they are anticipating to take.
+In order to solve this problem, we use data mining techinques and machine learning to predict the ideal price for an Airbnb listing. We use a public dataset on listings from New York City found [here](http://insideairbnb.com/get-the-data.html).
+
+The insights from this analysis project can be used by new Airbnb hosts, in helping them set a price for their new listings. Furthermore, existing hosts and Airbnb themselves could use this to determine whether or not a current listing is priced competitively and in line with the rest of the listings in a particular city. 
 
 This project and repository comprises the following:
 
 
+### Data Cleaning and Preparation
 
+1. Data-preparation.ipynb
 
-## File Descriptions:
-
-1. Preliminary Analysis on Amenities
 
 Convert the amenity list into binary variables. The resulting data frame is saved in the shared Google drive folder. Decided on the important amenities based on their impact on price and the significance (p-values of t-tests).
 
 
+### Data Exploration and Supervised Modelling
 
 
-## Data Dictionary
+### Unsupervised Modelling
 
-hos2_is_superhos2: 1 - false, 2 - true
+1. Linear model
 
-room type: 1 - Entire home/apt, 2 - Hotel room, 3 - Private room, 4 - Shared room
+2. Decision Trees
 
-amenities: 1 - false, 2 - true
+3. Cluster-wise Decision Trees
 
-neighbourhood_group_cleansed: 1 - Bronx, 2 - Brooklyn, 3 - Manhattan, 4 - Queens, 5 - Staten Island
+4. RandomForest.ipynb
+Implements a RandomForest model 
 
-property_type: 1 - Condominium, 2 - Apartment, 3 - Townhouse, 4 - House, 5 - Loft, 6 - Other
 
+
+
+
+
+### Data Dictionary
+
+* hos2_is_superhos2: 1 - false, 2 - true
+* room type: 1 - Entire home/apt, 2 - Hotel room, 3 - Private room, 4 - Shared room
+* amenities: 1 - false, 2 - true
+* neighbourhood_group_cleansed: 1 - Bronx, 2 - Brooklyn, 3 - Manhattan, 4 - Queens, 5 - Staten Island
+* property_type: 1 - Condominium, 2 - Apartment, 3 - Townhouse, 4 - House, 5 - Loft, 6 - Other
 
 
 ## Previous work on this data:
