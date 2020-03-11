@@ -1,11 +1,10 @@
 # Airbnb price recommendations
 
-### Authors: Amy Lin, Brad Jumagulov, Jainam Mehta, Prabhat Singh, Rameez Jafri
-### Date: 11 March 2020
-
 GitHub repository for our final project of the 'Data Mining Principles' course at the University of Chicago. 
 https://github.com/mehtajainam/airbnb-price-recommendations
 
+### Authors: Amy Lin, Brad Jumagulov, Jainam Mehta, Prabhat Singh, Rameez Jafri
+### Date: 11 March 2020
 
 As an Airbnb host, pricing your new listing can be a tricky problem to solve. One needs to account for several factors such as the location of the listing, the amenities being offered, the property and room types, and much more, in order to competitively price their listing. If you price too high, you might drive away potentials guests to other listing, but price too low and you wouldn't be making the most potential income. 
 
@@ -20,11 +19,16 @@ This project and repository comprises the following:
 
 1. Data-preparation.ipynb
 
-
-Convert the amenity list into binary variables. The resulting data frame is saved in the shared Google drive folder. Decided on the important amenities based on their impact on price and the significance (p-values of t-tests).
+Here, we clean the data by removing all listings with no reviews in the past 12 months. Furthermore, we handle outliers and missing data and create train and test datasets to perform further modelling on. 
 
 
 ### Data Exploration and Supervised Modelling
+
+1. Data Exploration 
+
+2. Latent Class Analysis
+
+3. K-means Clustering
 
 
 ### Unsupervised Modelling
@@ -35,8 +39,9 @@ Convert the amenity list into binary variables. The resulting data frame is save
 
 3. Cluster-wise Decision Trees
 
-4. RandomForest.ipynb
-Implements a RandomForest model 
+4. RandomForest.ipynb  
+
+We initially implement a RandomForest model using all predictors. The hyperparameters are then tuned using a GridSearch method with cross validation. The model is improved by further subsetting the data to include only those listings with > 5 reviews in the past 12 months. The variable importances are also analyzed. The final model had a test R2 of 0.694 and an average error of $30.22.
 
 
 
@@ -45,6 +50,8 @@ Implements a RandomForest model
 
 ### Data Dictionary
 
+LCA Analysis:
+
 * hos2_is_superhos2: 1 - false, 2 - true
 * room type: 1 - Entire home/apt, 2 - Hotel room, 3 - Private room, 4 - Shared room
 * amenities: 1 - false, 2 - true
@@ -52,7 +59,7 @@ Implements a RandomForest model
 * property_type: 1 - Condominium, 2 - Apartment, 3 - Townhouse, 4 - House, 5 - Loft, 6 - Other
 
 
-## Previous work on this data:
+### Previous work on this data:
 
-https://towardsdatascience.com/airbnb-rental-listings-dataset-mining-f972ed08ddec
+https://towardsdatascience.com/airbnb-rental-listings-dataset-mining-f972ed08ddec  
 https://rstudio-pubs-static.s3.amazonaws.com/407929_afc5ef0f2ad648389447a6ca3f4a7cd4.html
