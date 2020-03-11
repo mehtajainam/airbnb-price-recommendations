@@ -1,3 +1,0 @@
-https://towardsdatascience.com/airbnb-rental-listings-dataset-mining-f972ed08ddec
-
-https://rstudio-pubs-static.s3.amazonaws.com/407929_afc5ef0f2ad648389447a6ca3f4a7cd4.html
