@@ -26,9 +26,11 @@ Here, we clean the data by removing all listings with no reviews in the past 12 
 
 1. Data Exploration 
 
-2. Latent Class Analysis
+2. Preliminary analysis on Amenities
 
-3. K-means Clustering
+3. Latent Class Analysis
+
+4. K-means Clustering
 
 
 ### Unsupervised Modelling
@@ -40,10 +42,6 @@ Here, we clean the data by removing all listings with no reviews in the past 12 
 3. Cluster-wise Decision Trees
 
 4. RandomForest.ipynb  
-
-We initially implement a RandomForest model using all predictors. The hyperparameters are then tuned using a GridSearch method with cross validation. The model is improved by further subsetting the data to include only those listings with > 5 reviews in the past 12 months. The variable importances are also analyzed. The final model had a test R2 of 0.694 and an average error of $30.22.
-
-
 
 
 
