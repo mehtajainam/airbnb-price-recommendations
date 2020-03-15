@@ -1,0 +1,56 @@
+---
+title: "LCA_Categorical_2"
+author: "Rameez Jafri"
+output: html_document
+---
+
+```{r}
+train = read.csv("C:/Users/Rameez/Dropbox/UChicago_Assignments/Data Mining/train_cat.csv")
+test = read.csv("C:/Users/Rameez/Dropbox/UChicago_Assignments/Data Mining/test_cat.csv")
+
+library(poLCA)
+library(ggplot2)
+
+train = train[,3:ncol(train)]
+test = test[,3:ncol(test)]
+head(train)
+head(test)
+
+set.seed(1000)
+```
+
+#Declare formula for LCA
+```{r}
+f = cbind(hos2_is_superhos2, neighbourhood_group_cleansed, property_type, room_type)~1
+```
+
+#Calculate AIC
+
+```{r}
+train_aic= 2:4
+for (i in 2:4){
+  train_aic[i] = poLCA(f,train,nclass=i,nrep=100,tol=.001,verbose=FALSE, graphs=FALSE)$aic
+}
+```
+
+
+#Calculate BIC
+```{r}
+train_bic= 2:4
+for (i in 2:4){
+  train_bic[i] = poLCA(f,train,nclass=i,nrep=100,tol=.001,verbose=FALSE, graphs=FALSE)$bic
+}
+```
+
+```{r}
+train_clusters = data.frame(cbind(Clusters=2:4, train_bic= train_bic[2:4], train_aic= train_aic[2:4]))
+train_clusters
+
+matplot(train_clusters[2:3], type = "b")
+```
+
+```{r}
+(optimal_cluster=poLCA(f,train,nclass= 2,nrep=100,tol=.001,verbose=FALSE, graphs=TRUE))
+
+(test_cluster = poLCA(f, test, nclass = 2, nrep = 1, tol=.001, probs.start = optimal_cluster$probs.start, verbose = FALSE, graphs = TRUE))
+```
