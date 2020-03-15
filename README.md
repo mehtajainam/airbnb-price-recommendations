@@ -19,8 +19,6 @@ This project and repository comprises the following:
 
 1. Data-preparation.ipynb
 
-Here, we clean the data by removing all listings with no reviews in the past 12 months. Furthermore, we handle outliers and missing data and create train and test datasets to perform further modelling on. 
-
 
 ### Data Exploration and Supervised Modelling
 
@@ -41,9 +39,11 @@ Here, we clean the data by removing all listings with no reviews in the past 12 
 
 3. Cluster-wise Decision Trees
 
-4. RandomForest.ipynb  
+4. RandomForest
 
+### Visualization
 
+1. Residual Analysis
 
 
 ### Data Dictionary
